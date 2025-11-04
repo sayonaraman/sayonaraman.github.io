@@ -199,6 +199,13 @@ class SitePublisher:
 
 def main():
     """Основная функция"""
+    import sys
+    import io
+    
+    # Фикс для кодировки Windows
+    if sys.platform == 'win32':
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+    
     print("=" * 60)
     print("  📢 Публикация постов на GitHub Pages")
     print("=" * 60)
