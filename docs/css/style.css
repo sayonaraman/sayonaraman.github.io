@@ -2,10 +2,10 @@
 :root {
     --bg-primary: #FFD60A;
     --bg-secondary: #FFC300;
-    --bg-card: #000000;
-    --bg-card-hover: #1a1a1a;
-    --text-primary: #ffffff;
-    --text-secondary: #FFD60A;
+    --bg-card: #FFFFFF;
+    --bg-card-hover: #F5F5F5;
+    --text-primary: #000000;
+    --text-secondary: #FF6B00;
     --text-dark: #000000;
     --accent: #FF6B00;
     --accent-hover: #FF8C42;
