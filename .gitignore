@@ -1,15 +1,20 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-env/
-venv/
-ENV/
+# Храним только docs/ и posts/
+# Все остальное игнорируем
 
-# Excel temp files
+# Python скрипты и config
+*.py
+config.py
+
+# Батники
+*.bat
+
+# Excel файлы
+*.xlsx
 ~$*.xlsx
+
+# Документация и инструкции
+*.md
+!posts/*.md
 
 # IDE
 .vscode/
@@ -21,6 +26,19 @@ ENV/
 .DS_Store
 Thumbs.db
 
-# Project specific
+# Логи
 *.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# Requirements
+requirements.txt
 
