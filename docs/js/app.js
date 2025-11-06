@@ -1,5 +1,5 @@
 // === Конфигурация === 
-const POSTS_FILE = 'posts/posts.json';
+const POSTS_FILE = 'posts/posts.json?v=' + Date.now();
 
 // === Глобальные переменные ===
 let allPosts = [];
