@@ -53,7 +53,7 @@
     count.textContent = `${n} ${n === 1 ? 'статья' : n > 1 && n < 5 ? 'статьи' : 'статей'}`;
   }
   search.addEventListener('input', render);
-  fetch('posts/posts.json').then(response => {
+  fetch('posts/posts.json?v=20261012-2').then(response => {
     if (!response.ok) throw new Error('Не удалось загрузить статьи');
     return response.json();
   }).then(data => { posts = data.posts || []; render(); loading.hidden = true; loading.style.display = 'none'; })

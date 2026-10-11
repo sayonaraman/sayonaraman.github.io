@@ -14,7 +14,8 @@ def inline(text):
     value = html.escape(text)
     value = re.sub(r'\[([^\]]+)\]\((https?://[^\s)]+)\)',
                    r'<a href="\2" target="_blank" rel="noopener noreferrer">\1</a>', value)
-    return re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', value)
+    value = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', value)
+    return re.sub(r'`([^`]+)`', r'<code>\1</code>', value)
 
 
 blocks, headings = [], []
@@ -22,6 +23,17 @@ i = 1
 while i < len(lines):
     line = lines[i].strip()
     if not line:
+        i += 1
+        continue
+    if line.startswith('```'):
+        code = []
+        i += 1
+        while i < len(lines) and not lines[i].strip().startswith('```'):
+            code.append(lines[i])
+            i += 1
+        if i == len(lines):
+            raise ValueError('Unclosed code block in source.')
+        blocks.append('<pre><code>' + html.escape('\n'.join(code)) + '</code></pre>')
         i += 1
         continue
     if line.startswith('|'):
@@ -33,7 +45,8 @@ while i < len(lines):
             i += 1
         header = '<tr>' + ''.join('<th scope="col">' + inline(x) + '</th>' for x in rows[0]) + '</tr>'
         body = ''.join('<tr>' + ''.join('<td>' + inline(x) + '</td>' for x in row) + '</tr>' for row in rows[1:])
-        blocks.append('<div class="table-scroll" tabindex="0" role="region" aria-label="Расход трафика трансляций"><table><thead>' + header + '</thead><tbody>' + body + '</tbody></table></div>')
+        label = 'Профиль готового видео' if rows[0][0] == 'Параметр' else 'Расход трафика трансляций'
+        blocks.append('<div class="table-scroll" tabindex="0" role="region" aria-label="' + label + '"><table><thead>' + header + '</thead><tbody>' + body + '</tbody></table></div>')
         continue
     if line.startswith('• '):
         items = []

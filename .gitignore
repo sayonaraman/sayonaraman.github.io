@@ -4,6 +4,7 @@
 # Python скрипты и config
 *.py
 !tools/build_stream_post.py
+!docs/downloads/deploy-stream-panel.py
 config.py
 
 # Батники
