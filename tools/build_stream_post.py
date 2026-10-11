@@ -85,9 +85,9 @@ page = f'''<!DOCTYPE html>
   <meta property="og:type" content="article">
   <meta property="og:image" content="https://sayonaraman.github.io/images/stream24x7.png">
   <link rel="canonical" href="https://sayonaraman.github.io/posts/stream24x7.html">
-  <link rel="stylesheet" href="../css/style.css?v=20261012-1">
+  <link rel="stylesheet" href="../css/style.css?v=20261012-3">
   <script src="https://telegram.org/js/telegram-web-app.js" defer></script>
-  <script src="../js/telegram.js" defer></script>
+  <script src="../js/telegram.js?v=20261012-3" defer></script>
 </head>
 <body>
   <div class="reading-progress" aria-hidden="true"></div>
