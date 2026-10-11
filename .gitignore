@@ -3,6 +3,7 @@
 
 # Python скрипты и config
 *.py
+!tools/build_stream_post.py
 config.py
 
 # Батники

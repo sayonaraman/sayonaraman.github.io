@@ -2,26 +2,31 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Мама я вайбкодер</title>
     <meta name="description" content="Блог про вайбкодинг, автогенерацию контента и AI-инструменты">
     <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/318/318966.png">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=20261012-1">
+    <script src="https://telegram.org/js/telegram-web-app.js" defer></script>
+    <script src="js/telegram.js" defer></script>
 </head>
 <body>
     <div class="container">
         <!-- Header -->
         <header class="header">
             <div class="header-content">
-                <h1 class="logo">🚀 Мама я вайбкодер</h1>
-                <p class="tagline">Вайбкодинг • AI • Автоматизация контента</p>
+                <h1 class="logo">Блог</h1>
+                <p class="tagline">Вайбкодинг · AI · Автоматизация</p>
             </div>
         </header>
 
         <!-- Search -->
         <div class="search-container">
-            <input type="text" id="searchInput" class="search-input" placeholder="Поиск по постам...">
+            <label class="sr-only" for="searchInput">Поиск по статьям</label>
+            <input type="search" id="searchInput" class="search-input" placeholder="Найти статью…" autocomplete="off">
         </div>
+
+        <div class="section-heading"><h2>Статьи</h2><span id="postCount" aria-live="polite"></span></div>
 
         <!-- Posts Grid -->
         <main class="posts-grid" id="postsGrid">
@@ -41,11 +46,11 @@
 
         <!-- Footer -->
         <footer class="footer">
-            <p>Сделано с ❤️ для вайбкодеров • 2025</p>
+            <p>Сделано с ❤️ для вайбкодеров · 2026</p>
         </footer>
     </div>
 
-    <script src="js/app.js"></script>
+    <script src="js/blog.js"></script>
 </body>
 </html>
 
